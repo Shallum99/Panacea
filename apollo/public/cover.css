@@ -1,0 +1,62 @@
+/*
+ * Globals
+ */
+
+
+/* Custom default button */
+.btn-secondary {
+ color: #000000;
+}
+.btn-secondary:hover,
+.btn-secondary:focus {
+  color: #000000;
+  text-shadow: none; /* Prevent inheritance from `body` */
+}
+
+
+/*
+ * Base structure
+ */
+
+body {
+  text-shadow: 0 .05rem .1rem rgba(21, 20, 20, 0.5);
+  box-shadow: inset 0 0 5rem rgba(24, 23, 23, 0.5);
+}
+
+.cover-container {
+  min-height: 100vh; /* Set minimum height to 100% of viewport height */
+  display: flex;
+  flex-direction: column;
+}
+
+header {
+  margin-bottom: auto; /* Push footer to the bottom */
+}
+
+
+
+/*
+ * Header
+ */
+
+.nav-masthead .nav-link {
+  padding: .25rem 0;
+  font-weight: 700;
+  color: rgba(33, 31, 31, 0.5);
+  background-color: transparent;
+  border-bottom: .25rem solid transparent;
+}
+
+.nav-masthead .nav-link:hover,
+.nav-masthead .nav-link:focus {
+  border-bottom-color: rgba(24, 23, 23, 0.25);
+}
+
+.nav-masthead .nav-link + .nav-link {
+  margin-left: 1rem;
+}
+
+.nav-masthead .active {
+  color: #100f0f;
+  border-bottom-color: #181717;
+}

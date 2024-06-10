@@ -1,87 +1,84 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
-    <meta name="generator" content="Hugo 0.84.0">
-    <title>Signin Template · Bootstrap v5.0</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Signup/Login Page</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <!-- Custom CSS -->
+  <link href="styles.css" rel="stylesheet">
+</head>
+<body>
+  <div class="container d-flex flex-column align-items-center justify-content-center min-vh-100">
+    <h1 class="panacea-text mb-4">Panacea</h1>
+    <div class="card shadow-lg p-4 w-100" style="max-width: 400px;">
+      <div class="card-body">
+        <h2 class="card-title text-center mb-4" id="formTitle">Please sign in</h2>
+        
+        <!-- Sign-in Form -->
+        <form id="signinForm">
+          <div class="form-floating mb-3">
+            <input type="email" class="form-control" id="signinEmail" placeholder="name@example.com">
+            <label for="signinEmail">Email address</label>
+          </div>
+          <div class="form-floating mb-3">
+            <input type="password" class="form-control" id="signinPassword" placeholder="Password">
+            <label for="signinPassword">Password</label>
+          </div>
+          <div class="checkbox mb-3">
+            <label>
+              <input type="checkbox" value="remember-me"> Remember me
+            </label>
+          </div>
+          <button class="w-100 btn btn-lg btn-primary mb-3" type="button" onclick="window.location.href='optimizer.html';">Log in</button>
+        </form>
 
-    <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/sign-in/">
+        <!-- Sign-up Form -->
+        <form id="signupForm" style="display: none;">
+          <div class="form-floating mb-3">
+            <input type="text" class="form-control" id="signupName" placeholder="Your Name">
+            <label for="signupName">Your Name</label>
+          </div>
+          <div class="form-floating mb-3">
+            <input type="email" class="form-control" id="signupEmail" placeholder="name@example.com">
+            <label for="signupEmail">Email address</label>
+          </div>
+          <div class="form-floating mb-3">
+            <input type="password" class="form-control" id="signupPassword" placeholder="Password">
+            <label for="signupPassword">Password</label>
+          </div>
+          <button class="w-100 btn btn-lg btn-primary mb-3" type="submit">Sign up</button>
+        </form>
 
-    
-
-    <!-- Bootstrap core CSS -->
-<link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
-
-    <style>
-      .bd-placeholder-img {
-        font-size: 1.125rem;
-        text-anchor: middle;
-        -webkit-user-select: none;
-        -moz-user-select: none;
-        user-select: none;
-      }
-
-      @media (min-width: 768px) {
-        .bd-placeholder-img-lg {
-          font-size: 3.5rem;
-        }
-      }
-
-      .panacea-text {
-      font-size: 4rem;
-      animation: fadeIn 2s ease-in-out forwards; /* Animation */
-    }
-
-    @keyframes fadeIn {
-      0% {
-        opacity: 0;
-      }
-      100% {
-        opacity: 1;
-      }
-    }
-
-    </style>
-
-    
-    <!-- Custom styles for this template -->
-    <link href="signin.css" rel="stylesheet">
-  </head>
-  <body class="text-center">
-    
-<main class="form-signin">
-  <form>
-    <!-- <img class="mb-4" src="../assets/brand/bootstrap-logo.svg" alt="" width="72" height="57"> -->
-    <h1 class="panacea-text">Panacea</h1>
-    &nbsp;
-    <p class="lead">Let's get started </p>
-    &nbsp;
-    <div class="form-floating">
-      <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
-      <label for="floatingInput">Email address</label>
+        <button id="toggleFormBtn" class="w-100 btn btn-lg btn-secondary">Sign up instead</button>
+      </div>
     </div>
-    <div class="form-floating">
-      <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
-      <label for="floatingPassword">Password</label>
-    </div>
+  </div>
 
-    <div class="checkbox mb-3">
-      <label>
-        <input type="checkbox" value="remember-me"> Remember me
-      </label>
-    </div>
-    <button class="w-100 btn btn-lg btn-primary" type="submit">Log in</button>
-  </form>
-</main>
+  <!-- Bootstrap JS and dependencies -->
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
+  <script>
+    // Toggle between sign-in and sign-up forms
+    const toggleFormBtn = document.getElementById("toggleFormBtn");
+    const signinForm = document.getElementById("signinForm");
+    const signupForm = document.getElementById("signupForm");
+    const formTitle = document.getElementById("formTitle");
 
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
-
-
-    
-  </body>
+    toggleFormBtn.addEventListener("click", function() {
+      if (signinForm.style.display === "none") {
+        signinForm.style.display = "block";
+        signupForm.style.display = "none";
+        formTitle.textContent = "Please sign in";
+        toggleFormBtn.textContent = "Sign up instead";
+      } else {
+        signinForm.style.display = "none";
+        signupForm.style.display = "block";
+        formTitle.textContent = "Create an account";
+        toggleFormBtn.textContent = "Sign in instead";
+      }
+    });
+  </script>
+</body>
 </html>
